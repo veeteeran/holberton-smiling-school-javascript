@@ -1,0 +1,240 @@
+/* Variables
+  ============================= */
+
+:root {
+    --color-purple: #C271FF;
+    --color-gray: #D8D8D8;
+    --color-black: #071629;
+
+    --font-family-pricing: 'Coiny';
+    --font-size-medium: 18px;
+}
+
+/* Base
+      ============================= */
+  
+/* *, *:before, *:after {
+box-sizing: border-box;
+} */
+
+body {
+    font-family: 'Source Sans Pro';
+}
+
+.hero-image,
+.pricing-hero-image{
+    background-image: url(images/pic_1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 1093px; */
+}
+
+.hero-image {
+    background-image: url(images/pic_1.jpg);
+}
+
+.pricing-hero-image {
+    background-image: url(images/pic_2.jpg);
+}
+
+.courses-hero-image {
+    background-image: url(images/pic_3.jpg);
+}
+
+header .container {
+    width: 1104px;
+    height: 30px;
+}
+header .logo {
+    width: 168px;
+}
+
+header ul {
+    width: 234;
+}
+
+header ul li {
+    font-size: 12px;
+}
+
+.btn-color {
+    background-color: var(--color-purple);
+    color: white;
+    width: 162px;
+    height: 44px;
+}
+
+.purple-text {
+    color: var(--color-purple);
+}
+
+.gray-text {
+    color: var(--color-gray);
+}
+
+.section-hero .section-inner {
+    width: 767px;
+    justify-content: center;
+    align-items: center;
+}
+
+.get-schooled {
+    font-size: 120px;
+}
+
+.coiny {
+    font-family: var(--font-family-pricing);
+}
+
+.learn {
+    color: var(--color-purple);
+}
+
+.carousel-of-quotes {
+    background-color: var(--color-purple);
+    /* height: 392px; */
+}
+
+.carousel-of-quotes p {
+    font-size: 22px;
+}
+
+/* arrow */
+.holberton_school-icon-arrow_3,
+.holberton_school-icon-arrow_4 {
+    font-size: 64px;
+}
+
+.tutorials-h1,
+.tutorials-p,
+.tutorials-arrow {
+    color: black;
+}
+
+.tutorials-p {
+    font-size: 14px;
+}
+
+[class^="tutorial-bg-"] {
+    width: 100%;
+    height: 9.6rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+[class^="tutorial-"] img{
+  width: 4rem;
+  height: 4rem;
+}
+
+.tutorial-bg-4 {
+    background-image: url(images/thumbnail_4.jpg);
+}
+
+.tutorial-bg-3 {
+    background-image: url(images/thumbnail_3.jpg);
+}
+
+.tutorial-bg-2 {
+    background-image: url(images/thumbnail_2.jpg);
+}
+
+.tutorial-bg-1 {
+    background-image: url(images/thumbnail_1.jpg);
+}
+
+.membership-bg,
+.footer-bg {
+    background-color: var(--color-black);
+}
+
+.copyright {
+    opacity: .35;
+}
+
+.holberton_school-icon-ic_facebook,
+.holberton_school-icon-ic_twitter,
+.holberton_school-icon-ic_instagram,
+.holberton_school-icon-check {
+    font-size: 30px;
+}
+
+.social {
+    width: 130px;
+}
+
+.tagline {
+    font-size: 60px;
+}
+
+.placceholder {
+    width: 240px;
+}
+
+.price {
+    font-size: 44px;
+}
+
+.price-per-month {
+    opacity: .5;
+}
+
+.holberton_school-icon-check {
+    color: greenyellow;
+}
+
+.border-top-bottom-none {
+    border-top: none;
+    border-bottom: none;
+}
+
+.faq-size {
+    font-size: 60px;
+}
+
+.courses-quote {
+    font-size: 32px;
+}
+
+.search-filters {
+    background-color: var(--color-purple);
+    /* height: 392px; */
+}
+
+.form-opacity {
+    opacity: .25;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: white;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: white;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: white;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: white;
+  }
+
+  .bootstrap-select.btn-group .btn .filter-option {
+    text-align: right;
+    }
+
+.white-bg {
+    background-color: white;
+    opacity: .25;
+}
+
+.holberton_school-icon-search_1 {
+    font-size: 24px;
+}
+
+@media (max-width: 680px) {
+    .get-schooled {
+        font-size: 60px;
+    }
+}
