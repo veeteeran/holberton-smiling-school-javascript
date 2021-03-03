@@ -116,7 +116,7 @@ header ul li {
     font-size: 14px;
 }
 
-[class^="tutorial-bg-"] {
+[class^="tutorial-bg"] {
     width: 100%;
     height: 9.6rem;
     background-position: center center;
@@ -124,12 +124,12 @@ header ul li {
     background-size: cover;
   }
 
-[class^="tutorial-"] img{
+[class^="tutorial-"] {
   width: 4rem;
   height: 4rem;
 }
 
-.tutorial-bg-4 {
+/* .tutorial-bg-4 {
     background-image: url(images/thumbnail_4.jpg);
 }
 
@@ -143,7 +143,7 @@ header ul li {
 
 .tutorial-bg-1 {
     background-image: url(images/thumbnail_1.jpg);
-}
+} */
 
 .membership-bg,
 .footer-bg {
