@@ -88,7 +88,8 @@ const createTutorials = () => {
 										$(`<div class="row justify-content-between mt-1 row-stars-time">`)
 											.append(
 												$(`<div class="col stars">`).append(
-													$(`<span class="holberton_school-icon-star purple-text"></span>`.repeat(element["star"]))
+													$(`<span class="holberton_school-icon-star purple-text"></span>`.repeat(element["star"])),
+													$(`<span class="holberton_school-icon-star gray-text"></span>`.repeat(5 - element["star"])),
 												),
 												$(`<p class="purple-text mr-3 duration">`).text(element["duration"])
 												)
