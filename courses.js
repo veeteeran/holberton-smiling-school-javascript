@@ -52,40 +52,6 @@ const filterBy = value => {
         filterByExpert();
 }
 
-const sortByMostPopular = () => {
-    const url = "https://smileschool-api.hbtn.info/courses";
-    $.get(
-        url,
-        data => {
-            generateCards(data.courses);
-        }
-    )
-}
-
-const sortByMostRecent = () => {
-    const url = "https://smileschool-api.hbtn.info/courses";
-    $.get(
-        url,
-        data => {
-            const { courses } = data;
-            courses.sort((a, b) => (a.published_at < b.published_at) ? 1 : -1)
-            generateCards(courses);
-        }
-    )
-}
-
-const sortByMostViewed = () => {
-    const url = "https://smileschool-api.hbtn.info/courses";
-    $.get(
-        url,
-        data => {
-            const { courses } = data;
-            courses.sort((a, b) => (a.views < b.views) ? 1 : -1);
-            generateCards(courses);
-        }
-    )
-}
-
 const generateCards = courses => {
     courses.forEach(element => {
         const card = $(`<div class="card card-col-lg-3 col-md-6 col-sm-12 border-0">`)
