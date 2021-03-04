@@ -42,14 +42,42 @@ const sortBy = value => {
 
 const filterBy = value => {
     $(".card-container").empty();
-    if (value === "1")
-        sortByMostPopular();
-    else if (value === "2")
-        filterByNovice();
-    else if (value === "3")
-        filterByIntermediate();
-    else if (value === "4")
-        filterByExpert();
+    // if (value === "1")
+    //     sortByMostPopular();
+    // else if (value === "2")
+    //     filterByNovice();
+    // else if (value === "3")
+    //     filterByIntermediate();
+    // else if (value === "4")
+    //     filterByExpert();
+    const url = "https://smileschool-api.hbtn.info/courses";
+    $.get(
+        url,
+        data => {
+            const { courses } = data;
+            // Filter by most all
+            if (value === "1") { }
+            // Filer by most Novice
+            else if (value === "2") {
+                const filteredTopic = courses.filter(function (element) {
+                    return element.topic === "Novice"
+                });
+            }
+            // Filter by most Intermediate
+            else if (value === "3") {
+                const filteredTopic = courses.filter(function (element) {
+                    return element.topic === "Intermediate"
+                });
+            }
+            // Filter by most Intermediate
+            else if (value === "4") {
+                const filteredTopic = courses.filter(function (element) {
+                    return element.topic === "Expert"
+                });
+            }
+            generateCards(filteredTopic);
+        }
+    )
 }
 
 const generateCards = courses => {
@@ -76,48 +104,6 @@ const generateCards = courses => {
         )
         $(".card-container").append(card);
     });
-}
-
-const filterByNovice = () => {
-    const url = "https://smileschool-api.hbtn.info/courses";
-    $.get(
-        url,
-        data => {
-            const { courses } = data;
-            const filteredTopic = courses.filter(function (element) {
-                return element.topic === "Novice"
-            })
-            generateCards(filteredTopic);
-        }
-    )
-}
-
-const filterByIntermediate = () => {
-    const url = "https://smileschool-api.hbtn.info/courses";
-    $.get(
-        url,
-        data => {
-            const { courses } = data;
-            const filteredTopic = courses.filter(function (element) {
-                return element.topic === "Intermediate"
-            })
-            generateCards(filteredTopic);
-        }
-    )
-}
-
-const filterByExpert = () => {
-    const url = "https://smileschool-api.hbtn.info/courses";
-    $.get(
-        url,
-        data => {
-            const { courses } = data;
-            const filteredTopic = courses.filter(function (element) {
-                return element.topic === "Expert"
-            })
-            generateCards(filteredTopic);
-        }
-    )
 }
 
 $(document).ready(() => {
