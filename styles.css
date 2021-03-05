@@ -225,8 +225,8 @@ header ul li {
     }
 
 .white-bg {
-    background-color: white;
-    opacity: .25;
+    /* background-color: white; */
+    opacity: .75;
 }
 
 .holberton_school-icon-search_1 {

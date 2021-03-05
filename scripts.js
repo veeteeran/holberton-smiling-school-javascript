@@ -1,22 +1,24 @@
 const createTestimonials = () => {
-	$(document).ajaxStart(() => {
-		$(".loader").show();
-	}).ajaxComplete(() => {
-		$(".loader").hide();
-	})
+	// $(document).ajaxSend(() => {
+	// 	console.log("sending");
+	// 	$(".loader").show();
+	// }).ajaxComplete(() => {
+	// 	console.log("complete")
+	// 	$(".loader").hide();
+	// })
 	// $('.loader').hide().ajaxStart(function () {
 	// 	console.log(this)
 	// 	$(this).show();  // show Loading Div
 	// 	} ).ajaxStop ( function(){
 	// 	$(this).hide(); // hide loading div
 	// 	});
+	// $(".loader").show();
 	const url = "https://smileschool-api.hbtn.info/quotes";
 	$.get(
 		url,
 		(data, status) => {
 			if (status === 'success') {
 				data.forEach(element => {
-					// $(".loader").hide();
 					$(".carousel-inner").append(
 						$("<div>", {
 							class: element["id"] === 1 ? "carousel-item active" : "carousel-item"
@@ -54,14 +56,11 @@ const createTestimonials = () => {
 					// 	} ).ajaxStop ( function(){
 					// 	$(this).hide(); // hide loading div
 					// 	});
-				// $(".loader").show();
 				});
 			}
 		}
 	)
-	// $(document).ajaxStop(() => {
-	// 	$(".loader").hide();
-	// })
+	$(".loader").hide();
 }
 
 $(document).ready(() => {

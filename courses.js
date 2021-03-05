@@ -19,14 +19,16 @@ const createMenuItems = () => {
 }
 
 const sortBy = value => {
-    $(".card-container").empty();
+    $("#num-videos").text("12 videos")
     const url = "https://smileschool-api.hbtn.info/courses";
     $.get(
         url,
         data => {
             const { courses } = data;
             // Sort by most popular
-            if (value === "1") { }
+            if (value === "1") {
+                generateCards(courses);
+            }
             // Sort by most recent
             else if (value === "2") {
                 courses.sort((a, b) => (a.published_at < b.published_at) ? 1 : -1);
@@ -41,37 +43,29 @@ const sortBy = value => {
 }
 
 const filterBy = value => {
-    $(".card-container").empty();
-    // if (value === "1")
-    //     sortByMostPopular();
-    // else if (value === "2")
-    //     filterByNovice();
-    // else if (value === "3")
-    //     filterByIntermediate();
-    // else if (value === "4")
-    //     filterByExpert();
     const url = "https://smileschool-api.hbtn.info/courses";
     $.get(
         url,
         data => {
             const { courses } = data;
+            let filteredTopic = [];
             // Filter by most all
             if (value === "1") { }
             // Filer by most Novice
             else if (value === "2") {
-                const filteredTopic = courses.filter(function (element) {
+                filteredTopic = courses.filter(function (element) {
                     return element.topic === "Novice"
                 });
             }
             // Filter by most Intermediate
             else if (value === "3") {
-                const filteredTopic = courses.filter(function (element) {
+                filteredTopic = courses.filter(function (element) {
                     return element.topic === "Intermediate"
                 });
             }
             // Filter by most Intermediate
             else if (value === "4") {
-                const filteredTopic = courses.filter(function (element) {
+                filteredTopic = courses.filter(function (element) {
                     return element.topic === "Expert"
                 });
             }
@@ -91,9 +85,31 @@ const sortByMostPopular = () => {
         }
     )
 }
-	
+
+$(".keyword-form").submit(event => {
+    event.preventDefault();
+    const url = "https://smileschool-api.hbtn.info/courses";
+    $.get(
+        url,
+        data => {
+            const { q } = data;
+            const { courses } = data;
+            const keyword = $("#keywords").val().toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+            let filteredKeyword = [];
+            filteredKeyword = courses.filter(function (element) {
+                return element.keywords.indexOf(keyword) >= 0
+            });
+            generateCards(filteredKeyword);
+        }
+    )
+})
 
 const generateCards = courses => {
+    $(".card-container").empty();
+    $("#num-videos").text(courses.length > 1 ? `${courses.length} videos` : "1 video");
+    if (courses.length === 0) {
+        $("#num-videos").text("No videos found");
+    }
     courses.forEach(element => {
         const card = $(`<div class="card card-col-lg-3 col-md-6 col-sm-12 border-0">`)
             .append($(`<img class="card-img-top" src=${element["thumb_url"]}>`),

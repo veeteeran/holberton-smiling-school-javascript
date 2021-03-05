@@ -62,7 +62,7 @@
         <!-- Search filters section -->
         <section class="section-search-filters">
             <div class="container-fluid search-filters p-3 text-white">
-                <form>
+                <form class="keyword-form text-uppercase">
                     <div class="form-row justify-content-center">
                         <div class="input-group col-sm-3">
                             <label for="keywords">KEYWORDS</label>
@@ -77,7 +77,7 @@
                             <div class="input-group-prepend">
                                 <label for="topic">TOPIC</label>
                             </div>
-                            <select class="custom-select topic-menu white-bg" id="topic" onchange="sortTopic(this.value)">
+                            <select class="custom-select topic-menu white-bg" id="topic" onchange="filterBy(this.value)">
                               
                             </select>
                         </div>
@@ -97,7 +97,7 @@
         <section class="section-results">
             <div class="container">
                 <div class="row my-5">
-                    <p>11 videos</p>
+                    <p id="num-videos"></p>
                 </div>
                 <div class="row card-container">
                     
