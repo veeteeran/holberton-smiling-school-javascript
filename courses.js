@@ -26,9 +26,7 @@ const sortBy = value => {
         data => {
             const { courses } = data;
             // Sort by most popular
-            if (value === "1") {
-                generateCards(courses);
-            }
+            if (value === "1") { }
             // Sort by most recent
             else if (value === "2") {
                 courses.sort((a, b) => (a.published_at < b.published_at) ? 1 : -1);
@@ -92,7 +90,6 @@ $(".keyword-form").submit(event => {
     $.get(
         url,
         data => {
-            const { q } = data;
             const { courses } = data;
             const keyword = $("#keywords").val().toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
             let filteredKeyword = [];
